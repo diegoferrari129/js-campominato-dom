@@ -11,6 +11,10 @@ function createSquare() {
     return elementSquare;
 }
 
+function createBomb() {
+    
+}
+
 const startGame = document.getElementById('start');
 startGame.addEventListener('click', function(){
 
