@@ -11,8 +11,14 @@ function createSquare() {
     return elementSquare;
 }
 
-function createBomb() {
-    
+function createBombs() {
+    let bombs = [];
+
+    for (let b = 1; b <= 16; b++) {
+        bomb.push(Math.floor(Math.random() * 100));
+    }
+
+    return bombs;
 }
 
 const startGame = document.getElementById('start');
