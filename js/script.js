@@ -15,7 +15,7 @@ function createBombs() {
     let bombs = [];
 
     for (let b = 1; b <= 16; b++) {
-        bomb.push(Math.floor(Math.random() * 100));
+        bombs.push(Math.floor(Math.random() * 100));
     }
 
     return bombs;
@@ -27,6 +27,8 @@ startGame.addEventListener('click', function(){
     // richiamo l'elemento #grid dal dom
     const grid = document.getElementById('grid');
 
+    let bombs = createBombs();
+
     // inizio un ciclo di 100 interazioni 
     for (let i = 1; i <= 100; i++) {
 
@@ -34,8 +36,17 @@ startGame.addEventListener('click', function(){
         let square = createSquare();
 
         square.addEventListener('click', function() {
+
             console.log(i);
+
             this.classList.toggle('clickedSquare');
+            
+            if (bombs.includes(i)) {
+
+                this.classList.toggle('clickedBomb');
+
+                console.log('BOOM');
+            }
         });
 
         // mostro il numero dell'interazione del su ogni casella creata
@@ -43,6 +54,8 @@ startGame.addEventListener('click', function(){
         
         // appendo la casella all'elemento #grid
         grid.append(square);
+        
     }
+    
 });
  

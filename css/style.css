@@ -28,6 +28,11 @@
     color: black;
 }
 
+.clickedBomb {
+    background-color: red;
+    color: black;
+}
+
 header {
     background-color: black;
 }
