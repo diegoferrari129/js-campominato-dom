@@ -19,15 +19,19 @@ function createBombs() {
     }
 
     return bombs;
+    
 }
 
 const startGame = document.getElementById('start');
 startGame.addEventListener('click', function(){
-
+    
     // richiamo l'elemento #grid dal dom
     const grid = document.getElementById('grid');
 
+    grid.innerHTML = '';
+
     let bombs = createBombs();
+    console.log(bombs)
 
     // inizio un ciclo di 100 interazioni 
     for (let i = 1; i <= 100; i++) {
@@ -45,7 +49,10 @@ startGame.addEventListener('click', function(){
 
                 this.classList.toggle('clickedBomb');
 
-                console.log('BOOM');
+                alert('BOOM');
+
+                grid.innerHTML = '';
+
             }
         });
 
